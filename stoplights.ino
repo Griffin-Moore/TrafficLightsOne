@@ -31,9 +31,10 @@ void setup() {               // set up the digital I/O pins
   digitalWrite(eastYellow, LOW);
   digitalWrite(eastGreen, LOW);
 }
-void loop() {
+void loop() 
+{
   if (digitalRead(westButton) == HIGH)
-  // request west>east traffic flow
+    // request west>east traffic flow
   {
     if (trafficWest != true)  // only continue if traffic flowing in the opposite (east) direction
     {
@@ -79,8 +80,11 @@ void loop() {
         digitalWrite(eastYellow, HIGH);
         delay(yellowBlinkTime);
       }
-      digitalWrite(eastYellow, LOW);
-      digitalWrite(eastRed, LOW);  // change east-facing lights from red to green
-      digitalWrite(eastGreen, HIGH);
+      {
+        digitalWrite(eastYellow, LOW);
+        digitalWrite(eastRed, LOW);  // change east-facing lights from red to green
+        digitalWrite(eastGreen, HIGH);
+      }
     }
   }
+}
